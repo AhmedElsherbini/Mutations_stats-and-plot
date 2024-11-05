@@ -30,7 +30,7 @@ python mut_stats_plot.py -i test.afa -f fasta
 
 You need to have Biopython, adjusText , pandas, numpy and argparse (get them via pip3 or conda)
 
-**What do I get ?**
+**What do you get ?**
 
 1-FASTA file with the longest conserved region in your alignment which can be important for (eg: domain or conserved pocket analysis for protein) or to design a PCR for the gene) 
 
