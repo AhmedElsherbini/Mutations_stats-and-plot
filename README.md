@@ -7,14 +7,18 @@ This simple Python3 script aims to analyze your protein or gene alignment file, 
 ## Usage
 
 Do you have a reference?
-Well, just arrange it as the top sequence.
+
+
+Well, just put it as the top sequence.
 
 ```bash
 python mut_stats_plot.py -i test.afa -f fasta -r
 
 ```
 
-No reference! No problem my friend, then, we will consider the most common (base/aa) as the reference.
+No reference is No problem 
+
+Then, we will consider the most common (base/aa) as the reference.
 
 ```bash
 python mut_stats_plot.py -i test.afa -f fasta 
