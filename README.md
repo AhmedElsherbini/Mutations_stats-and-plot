@@ -25,7 +25,7 @@ python mut_stats_plot.py -i test.afa -f fasta
 
 ```
 
-**dependencies ?** 
+**Dependencies ?** 
 
 You need to have Biopython, adjusText , pandas, numpy and argparse (get them via pip3 or conda)
 
