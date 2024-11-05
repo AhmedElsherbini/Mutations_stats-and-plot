@@ -16,7 +16,8 @@ python mut_stats_plot.py -i test.afa -f fasta -r
 
 ```
 **No reference ?**
-**No reference is no problem** 
+
+No reference is no problem
 
 Then, we will consider the most common (base/aa) as the reference.
 
