@@ -19,7 +19,7 @@ python mut_stats_plot.py -i test.afa -f fasta -r
 
 No problem
 
-Then, we will consider the most common (base/aa) as the reference. We just do not provide  <code>-r</code> argument.
+Then,we do not provide <code>-r</code> argument. And we will consider the most common (base/aa) as the reference.
 
 ```bash
 python mut_stats_plot.py -i test.afa -f fasta 
