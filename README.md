@@ -9,7 +9,7 @@ This simple Python3 script aims to analyze your protein or gene alignment file, 
 **Do you have a reference protein (or gene)?**
 
 
-Well, just put it as the top sequence.
+Well, just put your reference  as the top sequence.
 
 ```bash
 python mut_stats_plot.py -i test.afa -f fasta -r
@@ -30,6 +30,13 @@ python mut_stats_plot.py -i test.afa -f fasta
 
 You need to have Biopython, adjusText , pandas, numpy and argparse (get them via pip3 or conda)
 
+**What do I get ?**
+
+1- CSV file with the frequency of the mutations in your alignment file. 
+
+2-
+
+3-
   ![alt text](https://github.com/AhmedElsherbini/Mutations_stats-and-plot/blob/main/mutations_per_position_atest.afa-1.png)
 
 
