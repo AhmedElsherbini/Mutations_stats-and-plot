@@ -42,9 +42,11 @@ You need to have Biopython, adjusText , pandas, numpy and argparse (get them via
 
 5-PDF graph which is similar in concept to Manhattan plot.
 
-**PS: Y axis here is % NOT -log(p)**
 
 ![alt text](https://github.com/AhmedElsherbini/Mutations_stats-and-plot/blob/main/mutations_per_position_atest.afa-1.png)
+
+**PS: Y axis is % NOT -log(p)**
+
 
 
 ## Contributing
