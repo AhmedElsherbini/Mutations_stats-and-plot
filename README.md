@@ -25,8 +25,11 @@ python mut_stats_plot.py -i test.afa -f fasta
 
 ```
 
-As dependencies, you need to have Biopython, adjusText , pandas, numpy and argparse (get them via pip3 or conda)
+**dependencies ?** 
 
+You need to have Biopython, adjusText , pandas, numpy and argparse (get them via pip3 or conda)
+
+  ![alt text](https://github.com/AhmedElsherbini/Mutations_stats-and-plot/blob/main/mutations_per_position_atest.afa-1.png)
 
 
 ## Contributing
