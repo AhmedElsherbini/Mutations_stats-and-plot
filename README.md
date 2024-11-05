@@ -2,7 +2,7 @@
 
 **Kindly if you find this repo useful for your work, cite & star this repo**
 
-This simple Python3 script aims to analyze your protein or gene alignment file, get the longest conserved region, and statistics of your mutations, and plot them nicely.
+This simple Python3 script aims to analyze your protein or gene alignment file, get the longest conserved region, and statistics of your mutations, and plot them nicely in a way similar to the Manhattan GWAS plot.
 
 ## Usage
 
@@ -36,7 +36,9 @@ You need to have Biopython, adjusText , pandas, numpy and argparse (get them via
 
 2-CSV file with the frequency of the mutations in your alignment file. 
 
-4-PDF graph which is similar in concept to Manhattan plot 
+3-
+
+4-PDF graph which is similar in concept to Manhattan plot.
 
 **PS: Y axis here is % not -log(p)**
 
