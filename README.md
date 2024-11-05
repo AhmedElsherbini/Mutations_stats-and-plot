@@ -15,7 +15,7 @@ Well, just put it as the top sequence.
 python mut_stats_plot.py -i test.afa -f fasta -r
 
 ```
-**No reference ?**
+**No reference?**
 
 No reference is no problem
 
