@@ -34,13 +34,15 @@ You need to have Biopython, adjusText , pandas, numpy and argparse (get them via
 
 1-FASTA file with the longest conserved region in your alignment which can be important for (eg: domain or conserved pocket analysis for protein) or to design a PCR for the gene) 
 
-2-CSV file with the frequency of the mutations in your alignment file. 
+2-CSV file with the frequency (%) of the mutations in your alignment file. 
 
-3-
+3-CSV file with the  frequency (count) of mutation combination pattern to answer a question like **Which mutation comes with which mutation ?**  
 
-4-PDF graph which is similar in concept to Manhattan plot.
+4-CSV file with the mutation per each sequence.
 
-**PS: Y axis here is % not -log(p)**
+5-PDF graph which is similar in concept to Manhattan plot.
+
+**PS: Y axis here is % NOT -log(p)**
 
 ![alt text](https://github.com/AhmedElsherbini/Mutations_stats-and-plot/blob/main/mutations_per_position_atest.afa-1.png)
 
