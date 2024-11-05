@@ -41,11 +41,11 @@ You need to have Biopython, adjusText , pandas, numpy and argparse (get them via
 4-CSV file with the mutation per each sequence.
 
 5-PDF graph which is similar in concept to the Manhattan GWAS plot (the dashed line is 10 %).
+**PS: Y axis is % NOT -log(p)**
 
 
 ![alt text](https://github.com/AhmedElsherbini/Mutations_stats-and-plot/blob/main/mutations_per_position_atest.afa-1.png)
 
-**PS: Y axis is % NOT -log(p)**
 
 
 
