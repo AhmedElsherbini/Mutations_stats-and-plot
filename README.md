@@ -6,7 +6,7 @@ This simple Python3 script aims to analyze your protein or gene alignment file, 
 
 ## Usage
 
-Do you have a reference?
+**Do you have a reference?**
 
 
 Well, just put it as the top sequence.
@@ -16,7 +16,7 @@ python mut_stats_plot.py -i test.afa -f fasta -r
 
 ```
 
-No reference is No problem 
+**No reference is no problem** 
 
 Then, we will consider the most common (base/aa) as the reference.
 
@@ -25,7 +25,8 @@ python mut_stats_plot.py -i test.afa -f fasta
 
 ```
 
-As dependencies, you need to have Biopython and argparse (get them via pip3 or conda)
+As dependencies, you need to have Biopython, adjusText , pandas, numpy and argparse (get them via pip3 or conda)
+
 
 
 ## Contributing
