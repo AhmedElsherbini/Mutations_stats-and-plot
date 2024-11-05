@@ -19,7 +19,7 @@ python mut_stats_plot.py -i test.afa -f fasta -r
 
 No problem
 
-Then,we do not provide <code>-r</code> argument. And we will consider the most common (base/aa) as the reference.
+Then, we do not provide <code>-r</code> argument. And we will consider the most common (base/aa) as the reference.
 
 ```bash
 python mut_stats_plot.py -i test.afa -f fasta 
@@ -32,7 +32,7 @@ You need to have Biopython, adjusText , pandas, numpy and argparse (get them via
 
 **What do you get ?**
 
-1-FASTA file with the longest conserved region in your alignment which can be important for (eg: domain or conserved pocket analysis for protein) or to design a PCR for the gene) 
+1-FASTA file with the longest conserved region in your alignment which can be important for (eg: domain or conserved pocket analysis of your favorite protein) or to design a PCR for your gene-of-interest) 
 
 2-CSV file with the frequency (%) of the mutations in your alignment file. 
 
