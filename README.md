@@ -6,7 +6,7 @@ This simple Python3 script aims to analyze your protein (or gene) alignment file
 
 ## Usage
 
-**Do you have a reference protein (or gene)?**
+**Do you have a reference protein (or gene) in your alignment file?**
 
 
 Well, just put your reference  as the top sequence.
