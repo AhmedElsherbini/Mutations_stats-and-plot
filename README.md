@@ -40,7 +40,7 @@ You need to have Biopython, adjusText , pandas, numpy and argparse (get them via
 
 4-CSV file with the mutation per each sequence.
 
-5-PDF graph which is similar in concept to the Manhattan GWAS plot (the dashed line is 10 %).
+5-a graph in PDF format which is similar in concept to the Manhattan GWAS plot (the dashed line is 10 %).
 **PS: Y axis is % NOT -log(p)**
 
 
