@@ -5,14 +5,20 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from adjustText import adjust_text
 
+import argparse
+from Bio import AlignIO
+from collections import Counter
+import pandas as pd
+import matplotlib.pyplot as plt
+from adjustText import adjust_text
+
 def extract_conserved_sequence(input_file, file_format, use_reference):
     # Read alignment file
     aln = AlignIO.read(input_file, file_format)
-    consensus_sequence = identify_conserved_sequence(aln)
-
-    # Determine reference sequence
-    ref_seq = str(aln[0].seq).upper() if use_reference else consensus_sequence
-    longest_conserved_segment = find_longest_conserved_segment(consensus_sequence, ref_seq)
+    # Identify consensus sequence or reference sequence
+    ref_seq = str(aln[0].seq).upper() if use_reference else None
+    # Identify longest conserved region based on alignment
+    longest_conserved_segment = find_longest_conserved_segment_in_alignment(aln)
 
     # Save longest conserved sequence to file
     save_conserved_sequence(longest_conserved_segment, input_file)
@@ -20,27 +26,28 @@ def extract_conserved_sequence(input_file, file_format, use_reference):
     # Analyze mutations
     analyze_mutations(aln, input_file, ref_seq)
 
-def identify_conserved_sequence(aln):
+def find_longest_conserved_segment_in_alignment(aln):
     alignment_length = aln.get_alignment_length()
-    consensus_sequence = []
+    longest_segment = ""
+    current_segment = []
 
+    # Loop through each position in alignment
     for position in range(alignment_length):
         column = str(aln[:, position]).upper()
+
+        # Check if all bases in column are identical
         if all(base == column[0] for base in column):
-            consensus_sequence.append(column[0])
+            current_segment.append(column[0])  # Extend current conserved segment
         else:
-            consensus_sequence.append("")
+            # If a break in conservation, evaluate and reset current segment
+            if len(current_segment) > len(longest_segment):
+                longest_segment = "".join(current_segment)
+            current_segment = []  # Reset current segment
 
-    return "".join(consensus_sequence)
+    # Final check in case the longest segment is at the end
+    if len(current_segment) > len(longest_segment):
+        longest_segment = "".join(current_segment)
 
-def find_longest_conserved_segment(sequence1, sequence2):
-    len1, len2 = len(sequence1), len(sequence2)
-    longest_segment = ""
-    for i in range(len1):
-        for j in range(i, len1):
-            segment = sequence1[i:j + 1]
-            if segment in sequence2 and len(segment) > len(longest_segment):
-                longest_segment = segment
     return longest_segment
 
 def save_conserved_sequence(longest_segment, input_file):
@@ -60,8 +67,12 @@ def analyze_mutations(aln, input_file, reference_seq=None):
         counts = Counter(column)
         freq_dict = {base: count / total_sequences * 100 for base, count in counts.items()}
 
-        # Mutation prevalence and top mutation
-        wild_type = reference_seq[position] if reference_seq else max(freq_dict, key=freq_dict.get)
+        # Determine wild type base
+        if reference_seq and position < len(reference_seq):
+            wild_type = reference_seq[position]
+        else:
+            wild_type = max(freq_dict, key=freq_dict.get) if freq_dict else ""
+
         mutations = {base: freq for base, freq in freq_dict.items() if base != wild_type}
         top_mutation = max(mutations, key=mutations.get) if mutations else ""
         top_mutation_freq = mutations[top_mutation] if top_mutation else 0
@@ -72,6 +83,11 @@ def analyze_mutations(aln, input_file, reference_seq=None):
 
     save_mutation_data(mutation_data, positions, mutation_frequencies, input_file)
     create_mutation_plot(positions, mutation_data, mutation_frequencies, input_file)
+
+# Additional code for mutation saving, plotting, and command-line interface remains unchanged
+
+
+
 
 def save_mutation_data(mutation_data, positions, mutation_frequencies, input_file):
     mutation_df = pd.DataFrame({
