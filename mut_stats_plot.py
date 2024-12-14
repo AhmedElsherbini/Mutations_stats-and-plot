@@ -102,7 +102,7 @@ def save_mutation_data(mutation_data, positions, mutation_frequencies, input_fil
 def create_mutation_plot(positions, mutation_data, mutation_frequencies, input_file):
     plt.figure(figsize=(12, 7))
     plt.scatter(positions, mutation_frequencies, color="blue", label="Top Mutation Frequency %")
-    plt.axhline(y=10, color='red', linestyle='--', label="10% mutations frequency threshold")
+    plt.axhline(y=5, color='red', linestyle='--', label="5% mutations frequency threshold")
     plt.xlabel("Position")
     plt.ylabel("Top Mutation Frequency %")
     plt.title("Mutation Prevalence by Position")
